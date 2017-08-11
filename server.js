@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var Acticleone={
+var articles: {
+    Articleone={
     title: 'Article One',
     heading: 'Article One',
     Date: 'August 7, 2017',
@@ -31,7 +32,47 @@ var Acticleone={
             </ol>
     `
 };
-
+    Articletwo={
+        title: 'Article Two',
+    heading: 'Article Two',
+    Date: 'August 9, 2017',
+    content: `
+            <p> 
+                This is some Article two content This is some Article two content This is some Article two content 
+                This is some Article two content This is some Article two content This is some Article two content 
+                This is some Article two content This is some Article two content 
+            </p>
+            
+            <p>
+                This is some Article two content This is some Article two content This is some Article two content 
+                This is some Article two content This is some Article two content This is some Article two content 
+                This is some Article two content This is some Article two content This is some Article two content 
+                This is some Article two content This is some Article two content This is some Article two content 
+                This is some Article two content This is some Article two content 
+            </p>
+    `
+    };
+    Articlethree{
+    title: 'Article Three',
+    heading: 'Article Three',
+    Date: 'August 11, 2017',
+    content: `
+            <p> 
+                This is some Article Three content This is some Article two content This is some Article Three content 
+                This is some Article Three content This is some Article two content This is some Article Three content 
+                This is some Article Three content This is some Article two content 
+            </p>
+            
+            <p>
+                This is some Article two content This is some Article Three content This is some Article two content 
+                This is some Article two content This is some Article Three content This is some Article two content 
+                This is some Article two content This is some Article v content This is some Article two content 
+                This is some Article two content This is some Article v content This is some Article two content 
+                This is some Article two content This is some Article Three content 
+            </p>
+    `
+    };
+};
 function CreateTemplate (data) {
     var title = data.title;
     var date = data.date;
@@ -75,7 +116,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function (req, res) {
-  res.send(CreateTemplate(Acticleone));
+  res.send(CreateTemplate(articles.Articleone));
 });
 
 app.get('/article-two', function (req, res) {
