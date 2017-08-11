@@ -5,6 +5,33 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var Acticleone={
+    title: 'Article One',
+    heading: 'Article One',
+    Date: 'August 7, 2017',
+    content: `
+    <h1> 
+                Personal
+            </h1>
+            <p> 
+                This is some persoanal Info about me
+            </p>
+            
+            <h1>
+                Professional
+            </h1>
+            <p>
+                This is a list of my work experience:
+            </p>
+            <ol>
+                    <li>    Company 1 : worked as so and so 
+                    </li>
+                    <li>    Company 2 : worked as Manager and developed projects on  
+                    </li>
+            </ol>
+    `
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
