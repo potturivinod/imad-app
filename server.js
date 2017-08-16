@@ -114,8 +114,9 @@ var htmltemplate= `
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var ArticleName = req.params.ArticleName;
+
 app.get('/:ArticleName', function (req, res) {
+    var ArticleName = req.params.ArticleName;
   res.send(CreateTemplate(articles[ArticleName]));
 });
 
