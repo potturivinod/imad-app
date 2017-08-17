@@ -120,7 +120,7 @@ app.get('/:ArticleName', function (req, res) {
   res.send(CreateTemplate(articles[ArticleName]));
 });
 
-counter=0;
+var counter=0;
 app.get('/counter', function(req,res) {
     counter = counter +1;
     res.send(counter.tostring());
