@@ -119,7 +119,11 @@ app.get('/:ArticleName', function (req, res) {
     var ArticleName = req.params.ArticleName;
   res.send(CreateTemplate(articles[ArticleName]));
 });
-
+counter=0;
+app.get('/counter', function(req,res) {
+    counter = counter +1;
+    res.send(counter.tostring());
+});
 //app.get('/article-two', function (req, res) {
 //  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 //});
